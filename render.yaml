@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: zensure-api
+    runtime: python
+    region: oregon
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.3"
+      - key: ZENSURE_CORS_ORIGINS
+        value: "https://zensure-zero-touch-engine-for-networked-smart-unified-risk-evaluation.vercel.app,https://zensure.vercel.app"
+    plan: free
+    healthCheckPath: /health
