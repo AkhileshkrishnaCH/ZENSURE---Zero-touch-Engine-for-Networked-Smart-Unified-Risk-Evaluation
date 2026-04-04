@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, 'Segoe UI', sans-serif;
+  color: #e2e8f0;
+  background: #020617;
+  color-scheme: dark;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: inherit;
+  font-family: inherit;
+  background-color: #020617;
+  background:
+    radial-gradient(circle at top, rgba(34, 211, 238, 0.15), transparent 0 40%),
+    linear-gradient(180deg, #020617 0%, #0f172a 48%, #020617 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-3xl border border-white/10 bg-white/5 shadow-2xl shadow-slate-950/30 backdrop-blur-xl;
+  }
+}
